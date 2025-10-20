@@ -38,7 +38,7 @@ Core functionalities are:
 ![History dashboard](./Assets/history.png)
 ## Environment Setup & Installation
 
-The project's development environment Ssetup required the following;
+The project's development environment setup will require the following;
 
 **Backend**:
 
