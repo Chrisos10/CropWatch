@@ -10,10 +10,11 @@ This project leverages experimental data collected under **controlled and uncont
 ---
 
 ## Important Links
-Link to Figma Design Prototype: [Figma Prototype](https://www.figma.com/proto/HeYYfDZr1FuFhiuX3QKn9d/Untitled?node-id=55-110&t=To9ZBosESzdP5faF-1
+Link to Figma Design Prototype: [Figma Prototype](https://www.figma.com/proto/HeYYfDZr1FuFhiuX3QKn9d/Untitled?node-id=55-110&t=To9ZBosESzdP5faF-1)
 
-)
+
 Link to Demo_video: [Demo Video](https://github.com/Chrisos10/CropWatch.git)
+
 
 Link to Github Repo: [Repository](https://github.com/Chrisos10/CropWatch.git)
 
