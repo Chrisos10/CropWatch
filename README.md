@@ -26,7 +26,7 @@ The project's development environment Ssetup required the following;
 
 **Backend**:
 
-- Python 3.10+ with FastAPI installed (pip install fastapi uvicorn).
+- Python 3.10+ with FastAPI installed.
 
 - xgboost, pandas, numpy, scikit-learn installed.
 
