@@ -1,0 +1,18 @@
+# Core Frameworks
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+
+# Data Science Core Libraries (Update to current stable versions for Python 3.12 compatibility)
+pandas>=2.2.2
+numpy>=1.26.4
+scikit-learn>=1.4.2  # CRITICAL UPDATE: Avoids C++ build errors on Windows
+matplotlib>=3.8.4
+seaborn>=0.13.2
+
+# ML & Utilities
+joblib>=1.4.2
+xgboost>=2.0.3
+
+# FastAPI/Pydantic Dependencies
+python-multipart>=0.0.9
+pydantic>=2.7.4
