@@ -16,7 +16,7 @@ Link to Figma Design Prototype: [Figma Prototype](https://www.figma.com/proto/He
 Link to Demo_video: 
 [![Watch the video](https://img.youtube.com/vi/MMUu5lhs7qc/maxresdefault.jpg)](https://youtu.be/MMUu5lhs7qc)
 
-### [Watch this video on YouTube](https://youtu.be/MMUu5lhs7qc)
+### [Watch Solution Demonstration Demo](https://youtu.be/MMUu5lhs7qc)
 
 
 Link to Github Repo: [Repository](https://github.com/Chrisos10/CropWatch.git)
