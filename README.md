@@ -37,7 +37,7 @@ Follow these steps to run it
 #### 1. Clone the Repository
 ```bash
 git clone https://github.com/Chrisos10/CropWatch.git
-cd CropGuard
+cd CropWatch
 ```
 #### 2. Creating a Virtual Environment
 
