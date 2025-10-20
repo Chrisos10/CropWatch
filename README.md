@@ -13,7 +13,10 @@ This project leverages experimental data collected under **controlled and uncont
 Link to Figma Design Prototype: [Figma Prototype](https://www.figma.com/proto/HeYYfDZr1FuFhiuX3QKn9d/Untitled?node-id=55-110&t=To9ZBosESzdP5faF-1)
 
 
-Link to Demo_video: [Demo Video](https://github.com/Chrisos10/CropWatch.git)
+Link to Demo_video: 
+[![Watch the video](https://img.youtube.com/vi/MMUu5lhs7qc/maxresdefault.jpg)](https://youtu.be/MMUu5lhs7qc)
+
+### [Watch this video on YouTube](https://youtu.be/MMUu5lhs7qc)
 
 
 Link to Github Repo: [Repository](https://github.com/Chrisos10/CropWatch.git)
@@ -21,7 +24,18 @@ Link to Github Repo: [Repository](https://github.com/Chrisos10/CropWatch.git)
 Link to Raw Datasets: [Raw Datasets](https://data.mendeley.com/datasets/fmtgzw5mmp/1) 
 
 ---
+## System feature
 
+The porposed solution/system is a website with a user friendly interface that will enable the farmer to engage with the system unchallenged.
+Core functionalities are:
+- Automatic daily crop damage percentage predictions and associated chemical-free interventions to avoid the predicted damage
+- Single-time use or prediction for flexibility and instantaneous use
+- Data upload and storage to the system database to avoid daily filling of the same information
+- History dashboard to track trends and effectiveness of the suggested interventions.
+
+![Prediction functionalities](./Assets/predict.png)
+
+![History dashboard](./Assets/history.png)
 ## Environment Setup & Installation
 
 The project's development environment Ssetup required the following;
