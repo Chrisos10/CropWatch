@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropWatch | Register</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="../images/register_img.png" alt="Farmer sorting maize" class="background-image">
+            <div class="quote">
+                <p>Empower your storage practices.<br> Reduce losses sustainably,<br> without relying on pesticides.</p>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="top-buttons">
+                <a href="login.html">Login</a>
+                <button class="active" aria-current="page">Register</button>
+            </div>
+
+            <div class="register-form">
+                <h2>Create New Account</h2>
+                <form action="#" method="post">
+                    <label for="username">Username:</label>
+                    <div class="input-box">
+                        <input type="text" id="username" name="username" placeholder="Enter username" autocomplete="username" required>
+                    </div>
+                    
+                    <label for="email">Email:</label>
+                    <div class="input-box">
+                        <input type="email" id="email" name="email" placeholder="Enter email" autocomplete="email" required>
+                    </div>
+                    
+                    <label for="telephone">Telephone:</label>
+                    <div class="input-box">
+                        <input type="tel" id="telephone" name="telephone" placeholder="Enter phone number" autocomplete="tel" required>
+                    </div>
+                    
+                    <label for="address">Address:</label>
+                    <div class="input-box">
+                        <input type="text" id="address" name="address" placeholder="Enter address" autocomplete="street-address" required>
+                    </div>
+                    <fieldset>  
+                        <label for="password">Password:</label>
+                        <div class="input-box">
+                            <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="new-password" required>
+                        </div>
+                        
+                        <label for="retype_password">Re-type Password:</label>
+                        <div class="input-box">
+                            <input type="password" id="retype_password" name="retype_password" placeholder="Re-type password" autocomplete="new-password" required>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn">Register</button>
+                </form>
+                <p class="bottom-text">Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

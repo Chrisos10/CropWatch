@@ -33,9 +33,9 @@ Core functionalities are:
 - Data upload and storage to the system database to avoid daily filling of the same information
 - History dashboard to track trends and effectiveness of the suggested interventions.
 
-![Prediction functionalities](./Assets/predict.png)
+![Prediction functionalities](./assets/predict.png)
 
-![History dashboard](./Assets/history.png)
+![History dashboard](./assets/history.png)
 ## Environment Setup & Installation
 
 The project's development environment setup will require the following;

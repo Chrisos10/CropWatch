@@ -1,0 +1,302 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  /* This is the background color for the left side in the Figma design. */
+  background-color: #e3efdf;
+  color: #1a4f02;
+}
+
+/*  CONTAINER */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/*  LEFT SIDE */
+.left-side {
+  flex: 1;
+  position: relative;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0) brightness(100%);
+  z-index: 1;
+}
+
+/* Added an element for the green overlay on the left image */
+.left-side::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(69, 137, 59, 0.15);
+  z-index: 2;
+}
+
+.branding {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(0, 36, 0);
+  z-index: 3;
+}
+
+.branding h1 {
+  font-size: 2.5rem;
+  font-weight: 800rem;
+}
+
+.branding p {
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+/* ===== RIGHT SIDE ===== */
+.right-side {
+  flex: 1;
+  background-color: #e3efdf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.top-bar {
+  width: 100%;
+  background-color: #8cc38d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+
+.top-bar button,
+.top-bar a {
+  padding: 8px 18px;
+  border-radius: 10px;
+  background-color: #8cc38d;
+  color: #1a4f02;
+  font-weight: normal;
+  cursor: pointer;
+  margin: 0 30px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+
+.top-bar .active {
+  background-color: #ffffff; /* White background for the active button */
+  border: none;
+  color: #1a4f02;
+}
+
+
+.top-bar button:last-child {
+    margin-right: 0;
+}
+
+/* ===== FORM ===== */
+.login-form {
+  width: 75%;
+  max-width: 400px;
+  background: transparent;
+  padding: 20px;
+  text-align: center;
+  margin-top: 100px;
+  padding-top: 0;
+}
+
+.login-form h2 {
+  margin-bottom: 25px;
+  font-weight: normal;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.input-box {
+  background: #a4ce9b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.input-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1a4f02;
+  font-size: 1rem;
+}
+
+.btn {
+  background: #469a47;
+  color: #fff;
+  font-weight: normal;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #377d38;
+}
+
+.bottom-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.bottom-text a {
+  color: #0d3903;
+  text-decoration: underline;
+}
+
+.bottom-text a:hover {
+  text-decoration: none;
+}
+
+
+.forgot {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.forgot {
+  color: #3748C4;
+  text-decoration: underline;
+}
+
+.bottom-text a {
+  color: #3748C4;
+  text-decoration: none;
+}
+
+
+
+/* ===== Responsive Design ===== */
+
+/*
+  For screens smaller than 768px.
+*/
+@media (max-width: 768px) {
+  /*
+    Changing the main container to a single-column layout.
+  */
+  .container {
+    flex-direction: column;
+  }
+
+  /*
+    Ensuring the left side image still looks good.
+  */
+  .left-side {
+    height: 25vh;
+  }
+
+  .branding {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .branding h1 {
+    font-size: 1.8rem;
+  }
+
+  .branding p {
+    font-size: 0.8rem;
+  }
+
+  /*
+    Adjusting the form container for smaller screens.
+  */
+  .right-side {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+
+  /*
+    Adjusting the top bar buttons for a smaller layout.
+  */
+  .top-bar {
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .top-bar button, .top-bar a {
+    margin: 0;
+    padding: 8px 12px;
+  }
+
+  .login-form {
+    width: 90%;
+    margin-top: 20px;
+    padding: 10px;
+  }
+}
+
+/*
+  For very small screens (phones, less than 480px).
+*/
+@media (max-width: 480px) {
+  .left-side {
+    height: 20vh;
+  }
+
+  .branding h1 {
+    font-size: 1.5rem;
+  }
+
+  .branding p {
+    font-size: 0.7rem;
+  }
+
+  .top-bar {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .top-bar button, .top-bar a {
+    padding: 6px 10px;
+  }
+}
