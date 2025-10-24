@@ -11,6 +11,8 @@ body {
   background-color: #ffffff;
   color: #1a4f02;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ==== HEADER ====*/
@@ -21,6 +23,7 @@ header {
   padding: 15px 60px;
   background-color: #8cc38d;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .logo {
@@ -83,34 +86,64 @@ nav a:hover:not(.active) {
   background-color: #dcf5d7;
   color: #1a4f02;
   border: none;
-  padding: 8px 18px; 
+  padding: 8px 15px; 
   border-radius: 8px; 
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s;
-  padding: 8px 15px; 
 }
 
 .logout:hover {
   background-color: #377d38;
 }
 
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid #1a4f02;
+    background-color: #ffffff;
+    margin-left: 20px; 
+    color: #1a4f02;
+    transition: all 0.3s ease;
+}
+
+.profile-icon:hover {
+    color: #0f2d01;
+    background-color: #dcf5d7;
+    border-color: #0f2d01;
+}
+
+.profile-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+}
+
 /* ==== MAIN CONTENT ====*/
 main {
-  padding: 30px 60px 40px 60px; 
+  padding: 30px 60px 5px 60px; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
 }
 
 /* ==== INTRO SECTION ===== */
 .intro {
   display: flex;
-  /* Keep stretch so text and image boxes are the same height */
   align-items: stretch; 
   gap: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 20px; 
   background-color: #dcf5d7; 
   border-radius: 15px;
   padding: 35px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .intro .text {
@@ -143,7 +176,9 @@ main {
 
 /* ==== FEATURES SECTION ==== */
 .features {
-  margin-top: 0; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .features h3 {
@@ -157,6 +192,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
+  flex: 1;
 }
 
 /* ===== FEATURE CARD ===== */
@@ -207,7 +243,7 @@ main {
   left: 0;
 }
 
-/* ===== RESPONSIVE DESIGN  ===== */
+/* ===== RESPONSIVE DESIGN  ===== */
 
 /* For tablets and smaller screens */
 @media (max-width: 1024px) {
@@ -232,8 +268,20 @@ main {
     width: 100%;
     justify-content: center;
     gap: 10px;
+    margin-top: 10px;
   }
   
+  .profile-icon {
+      margin-left: 10px;
+      width: 32px;
+      height: 32px;
+  }
+  .profile-icon svg {
+      width: 20px;
+      height: 20px;
+  }
+  
+
   .intro {
     flex-direction: column;
     gap: 25px;
@@ -244,7 +292,7 @@ main {
   .intro img {
     max-width: 100%;
     order: -1;
-    height: 180px; 
+    max-height: 180px; 
   }
   
   .feature-grid {
@@ -256,8 +304,9 @@ main {
     min-height: auto;
   }
   
+
   main {
-    padding: 25px 40px 30px 40px;
+    padding: 25px 40px 5px 40px; 
   }
 }
 
@@ -293,6 +342,20 @@ main {
     font-size: 0.9rem;
   }
   
+  /* RESPONSIVE PROFILE ICON FIX */
+  .profile-icon {
+      margin-left: 8px;
+      margin-right: 5px;
+      width: 28px;
+      height: 28px;
+  }
+  
+  .profile-icon svg {
+      width: 18px;
+      height: 18px;
+  }
+  
+
   .intro {
     padding: 20px;
     margin-bottom: 20px;
@@ -314,7 +377,8 @@ main {
     font-size: 0.95rem;
   }
   
+
   main {
-    padding: 20px 30px 25px 30px;
+    padding: 20px 30px 5px 30px; 
   }
 }

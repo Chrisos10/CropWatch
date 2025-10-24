@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropWatch | Analysis</title>
+    <link rel="stylesheet" href="../css/analysis.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/logo1.png" alt="CropWatch Logo">
+            <h1>CropWatch</h1> 
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Analysis</a> 
+            <a href="#">Notification <span class="badge">2</span></a>
+        </nav>
+        <div class="user-section">
+            <a href="login.html"><button class="logout">Logout</button></a>
+            <a href="profile.html" class="profile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="analysis-page">
+        <div class="analysis-container">
+            
+            <section class="setup-card">
+                <h2>Enable automated daily checks by saving your storage details</h2>
+                
+                <div class="setup-content">
+                    <img src="../images/stock_img.jpg" alt="Grain storage facility" class="storage-image">
+                    
+                    <form class="setup-form">
+                        <div class="input-group">
+                            <label for="setup-technology">Storage Technology</label>
+                            <input type="text" id="setup-technology" placeholder="Type here">
+                        </div>
+                        <div class="input-group">
+                            <label for="setup-variety">Variety</label>
+                            <input type="text" id="setup-variety" placeholder="Type here">
+                        </div>
+                        <div class="input-group">
+                            <label for="setup-duration">Storage time (days)</label>
+                            <input type="text" id="setup-duration" placeholder="Type here">
+                        </div>
+                        <div class="input-group">
+                            <label for="setup-damage">Initial total damage (%)</label>
+                            <input type="text" id="setup-damage" placeholder="Type here">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="setup-impurities">Grain Impurities</label>
+                            <input type="text" id="setup-impurities" placeholder="Type here">
+                        </div>
+                        <div class="input-group button-group-end">
+                            <button type="submit" class="send-btn">
+                                Send <span class="icon">➤</span>
+                            </button>
+                        </div>
+                        </form>
+                </div>
+            </section>
+
+            <section class="check-card">
+                <h2>Take Control | Check Storage Risk Now</h2>
+                <p>Step outside automation and enter your details to check today's storage risk manually.</p>
+                
+                <form class="check-form">
+                    <div class="input-group half-width">
+                        <label for="check-technology">Storage Technology</label>
+                        <input type="text" id="check-technology" placeholder="Type here">
+                    </div>
+                    <div class="input-group half-width">
+                        <label for="check-temperature">Temperature</label>
+                        <input type="text" id="check-temperature" placeholder="Type here">
+                    </div>
+                    <div class="input-group half-width">
+                        <label for="check-humidity">Humidity</label>
+                        <input type="text" id="check-humidity" placeholder="Type here">
+                    </div>
+                    <div class="input-group half-width">
+                        <label for="check-variety">Variety</label>
+                        <input type="text" id="check-variety" placeholder="Type here">
+                    </div>
+                    <div class="input-group half-width">
+                        <label for="check-duration">Storage time (days)</label>
+                        <input type="text" id="check-duration" placeholder="Type here">
+                    </div>
+                    <div class="input-group half-width">
+                        <label for="check-damage">Initial total damage (%)</label>
+                        <input type="text" id="check-damage" placeholder="Type here">
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="check-impurities">Grain Impurities</label>
+                        <input type="text" id="check-impurities" placeholder="Type here">
+                    </div>
+                    
+                    <button type="submit" class="send-btn manual-btn">
+                        Send <span class="icon">➤</span>
+                    </button>
+                </form>
+
+                <div class="result-box">
+                    <h3>Result:</h3>
+                    <div class="feedback-area">
+                        Here is your feedback...
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
