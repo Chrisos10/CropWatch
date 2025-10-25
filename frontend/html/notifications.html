@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropWatch | Notifications</title>
+    <link rel="stylesheet" href="../css/notifications.css">
+    <script src="../js/notifications.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/logo1.png" alt="CropWatch Logo">
+            <h1>CropWatch</h1> 
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="analysis.html">Analysis</a> 
+            <a href="notifications.html" class="active">Notification <span class="badge">2</span></a>
+        </nav>
+        <div class="user-section">
+            <a href="login.html"><button class="logout">Logout</button></a>
+            <a href="profile.html" class="profile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="notification-container">
+            
+            <div class="notifications-list">
+                
+                <div class="filter-dropdown">
+                    <span class="recent-label">Recent</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                </div>
+
+                <div class="notification-card">
+                    <div class="notification-header">
+                        <span class="notification-id">Notification_01</span>
+                        <div class="notification-meta">
+                            <span class="date">Date: 01-01-2025</span>
+                            <span class="time">Time: 12:01:45</span>
+                        </div>
+                    </div>
+                    <div class="notification-body">
+                        <p class="location-label">Location: <span class="location-value">Nyarugenge</span></p>
+                        <p class="spoilage-risk">Potential 3% spoilage detected.</p>
+                        <p class="recommendation">
+                            <span class="recommendation-label">Recommendation:</span> Storage conditions are optimal. No action needed. Keep monitoring regularly.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notification-card">
+                    <div class="notification-header">
+                        <span class="notification-id">Notification_02</span>
+                        <div class="notification-meta">
+                            <span class="date">Date: 01-01-2025</span>
+                            <span class="time">Time: 12:15:03</span>
+                        </div>
+                    </div>
+                    <div class="notification-body">
+                        <p class="location-label">Location: <span class="location-value">Kicukiro</span></p>
+                        <p class="spoilage-risk">Potential 15% spoilage detected.</p>
+                        <p class="recommendation">
+                            <span class="recommendation-label">Recommendation:</span> Slight humidity rise detected. Improve ventilation or inspect the storage area to prevent mold growth.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notification-card">
+                    <div class="notification-header">
+                        <span class="notification-id">Notification_03</span>
+                        <div class="notification-meta">
+                            <span class="date">Date: 01-01-2025</span>
+                            <span class="time">Time: 12:15:03</span>
+                        </div>
+                    </div>
+                    <div class="notification-body">
+                        <p class="location-label">Location: <span class="location-value">Kicukiro</span></p>
+                        <p class="spoilage-risk">Potential 40% spoilage detected.</p> 
+                        <p class="recommendation">
+                            <span class="recommendation-label">Recommendation:</span> High temperature and humidity detected. Dry the grains immediately and improve airflow to prevent pest infestation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notification-card placeholder-card">
+                    <div class="notification-header">
+                        <span class="notification-id">Notification_04</span>
+                        <div class="notification-meta">
+                            <span class="date">Date: 02-01-2025</span>
+                            <span class="time">Time: 10:00:00</span>
+                        </div>
+                    </div>
+                    <div class="notification-body">
+                        <p class="location-label">Location: <span class="location-value">Gasabo</span></p>
+                        <p class="spoilage-risk">No significant changes detected. Stable.</p>
+                        <p class="recommendation">
+                            <span class="recommendation-label">Recommendation:</span> Automated check completed successfully.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="info-sidebar">
+                
+                <div class="image-section">
+                    <img src="https://placehold.co/400x300/e9f5e4/4b6b3e?text=Corn+Storage+Sample+1" alt="Close-up of corn storage" class="corn-image" id="rotatingImage">
+                    <div class="image-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="checkin-card">
+                    <h3>Upcoming Check-in:</h3>
+                    <ul>
+                        <li>Time: <span>..................</span></li>
+                        <li>Weather: <span>..................</span></li>
+                        <li>Location: <span>..................</span></li>
+                        <li>Quantity: <span>..................</span></li>
+                        <li>Current Temp: <span>..................</span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
