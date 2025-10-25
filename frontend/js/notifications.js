@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================================================
     // 1. DYNAMIC RISK CLASS ASSIGNMENT (New Logic)
     //    Reads the percentage and applies 'low-risk', 'medium-risk', or 'high-risk' class.
-    // =========================================================
     
     const notificationCards = document.querySelectorAll('.notification-card');
 
@@ -32,36 +30,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     // High Risk: 40% and above
                     riskClass = 'high-risk';
                 }
-                
-                // Remove existing risk classes and apply the new one
+                // Remove any existing risk classes before adding the new one
                 card.classList.remove('low-risk', 'medium-risk', 'high-risk', 'placeholder-card');
                 card.classList.add(riskClass);
             }
         }
     });
     
-    // --- (Optional: Click handler for 'selected' state) ---
     notificationCards.forEach(card => {
         card.addEventListener('click', () => {
-            // Remove 'selected' from all other cards
             notificationCards.forEach(c => c.classList.remove('selected'));
-            // Add 'selected' to the clicked card
             card.classList.add('selected');
         });
     });
 
 
-    // =========================================================
-    // 2. IMAGE ROTATION LOGIC (Existing Code, integrated)
-    // =========================================================
+
+    // 2. IMAGE ROTATION LOGIC
 
     const imageElement = document.getElementById('rotatingImage');
     const dots = document.querySelectorAll('.image-dots .dot');
 
-    // Ensure imageElement and dots are found before proceeding
+
     if (!imageElement || dots.length === 0) {
         console.warn("Image rotation elements not found. Skipping rotation logic.");
-        return; // Exit if elements are missing
+        return;
     }
 
     const images = [
@@ -74,12 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function rotateImage() {
-        // Update image source
         currentIndex = (currentIndex + 1) % images.length;
         imageElement.src = images[currentIndex];
         imageElement.alt = `Close-up of corn storage ${currentIndex + 1}`;
-        
-        // Update dots
+
+
         dots.forEach((dot, index) => {
             dot.classList.remove('active');
             if (index === currentIndex) {
@@ -87,8 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Start the rotation: change image every 3000 milliseconds (3 seconds)
-    // We start the interval after the DOM is fully loaded.
     setInterval(rotateImage, 3000);
 });
