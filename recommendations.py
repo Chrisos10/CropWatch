@@ -60,7 +60,7 @@ RECOMMENDATION_TEMPLATES = {
         'action': 'Excellent! Your grain is perfectly preserved. Continue current storage practices and check grain daily for any changes',
     },
     
-    # Preventive recommendations (LOW risk with concerning features)
+    # Preventive recommendations, lOW risk with concerning features)
     'preventive_high_temperature': {
         'action': 'Temperature is elevated but grain is safe. Open storage container daily for 30 minutes to release heat. Keep container in shade under roof',
     },
@@ -90,7 +90,7 @@ RECOMMENDATION_TEMPLATES = {
         'action': 'Storage conditions are optimal. Continue checking grain daily and maintain current practices',
     },
     
-    # ACTION REQUIRED (MEDIUM/HIGH risk)
+    # MEDIUM/HIGH risk
     'action_high_temperature': {
         'action': 'TEMPERATURE RISK: Mix 100g ground Neem leaf powder per kg of grain immediately. Store container in coolest area. Open daily for 30min to cool',
     },
@@ -208,9 +208,8 @@ class RecommendationEngine:
             logger.info("Perfect prediction (0%)")
             return RECOMMENDATION_TEMPLATES['perfect_conditions']
         
-        # Llow prediction 0.01-3% damage
-        # Minor risk detected by model
-        # If features are concerning, give PREVENTIVE advice
+        # low prediction 0.01-3% damage
+
         elif risk_level == RiskLevel.LOW:
             if primary_risk:
                 logger.info(f"Low prediction with concerning feature: {primary_risk}")
@@ -237,7 +236,6 @@ class RecommendationEngine:
         
         # MEDIUM/HIGH PREDICTION >3% damage
         # Significant risk detected by model
-        # ACTION REQUIRED - give specific interventions
         else:
             if primary_risk:
                 logger.info(f"{risk_level.value.upper()} prediction with {primary_risk}")
