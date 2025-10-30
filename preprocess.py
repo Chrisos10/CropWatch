@@ -39,19 +39,23 @@ class FeatureProcessor:
     Fetches data, applies encoders, creates feature arrays
     """
     
-    def __init__(self, encoder_path: str = "./models/encoder.pkl"):
+    def __init__(self, encoder_path: str = None):
         """
         Initialize feature processor
         
         Args:
-            encoder_path: Path to saved OneHotEncoder
+            encoder_path: Path to saved OneHotEncoder (optional)
         """
+
+        if encoder_path is None:
+            current_file_dir = Path(__file__).parent
+            encoder_path = current_file_dir.parent / "models" / "encoder.pkl"
+        
         self.encoder_path = Path(encoder_path)
         self.encoder = self._load_encoder()
         self.weather_retriever = WeatherDataRetriever()
         
         # Define expected feature order
-        # These are the numerical features before encoding
         self.numerical_features = [
             'tmax_c',
             'hrmin_pct',
@@ -63,7 +67,7 @@ class FeatureProcessor:
         # Categorical features to encode
         self.categorical_features = ['storage_technology', 'variety']
         
-        # Define exact categories expected by the model (from your feature list)
+        # Define exact categories expected by the model
         self.expected_varieties = ['Hybrid', 'Native']
         self.expected_storage_techs = [
             'grainpro hermetic supergrainbag farm',
@@ -327,18 +331,18 @@ class FeatureProcessor:
         
         # Check if they match
         if len(our_features) == len(model_features_expected):
-            print("\n Feature count matches!")
+            print("\n✓ Feature count matches!")
         else:
-            print(f"\n Feature count mismatch: {len(our_features)} vs {len(model_features_expected)}")
+            print(f"\n✗ Feature count mismatch: {len(our_features)} vs {len(model_features_expected)}")
         
         # Check for missing features
         missing = set(model_features_expected) - set(our_features)
         if missing:
-            print(f"\n Missing features: {missing}")
+            print(f"\n✗ Missing features: {missing}")
         
         extra = set(our_features) - set(model_features_expected)
         if extra:
-            print(f"\n Extra features: {extra}")
+            print(f"\n✗ Extra features: {extra}")
             
         return len(our_features) == len(model_features_expected) and not missing and not extra
     
@@ -396,7 +400,7 @@ class FeatureProcessor:
         
         return features
 
-# Helper function forapi integration
+# Helper function for api integration
 
 def prepare_prediction_features(session_id: int) -> Tuple[np.ndarray, Dict]:
     """
@@ -442,24 +446,24 @@ if __name__ == "__main__":
         active_sessions = get_active_sessions(db)
         
         if not active_sessions:
-            print("\n  No active sessions found in database")
+            print("\n⚠ No active sessions found in database")
             print("Create a test session first using database.py")
         else:
             session = active_sessions[0]
-            print(f"\n Testing with session {session.session_id}")
+            print(f"\n✓ Testing with session {session.session_id}")
             
             # Initialize processor
             processor = FeatureProcessor()
             
             # First, verify feature names match
-            print("\n Verifying feature name matching...")
+            print("\n✓ Verifying feature name matching...")
             feature_match_success = processor.verify_feature_names()
             
             if not feature_match_success:
-                print("\n WARNING: Feature names don't match model expectations!")
+                print("\n⚠ WARNING: Feature names don't match model expectations!")
                 print("   Predictions may be inaccurate!")
             else:
-                print("\n Feature names match model expectations!")
+                print("\n✓ Feature names match model expectations!")
             
             # Prepare features
             feature_array, raw_features = processor.prepare_features_for_prediction(
@@ -467,13 +471,13 @@ if __name__ == "__main__":
                 db_session=db
             )
             
-            print("\n Raw Features:")
+            print("\n✓ Raw Features:")
             for key, value in raw_features.items():
                 if key not in ['user_id', 'session_id']:
                     print(f"  {key}: {value}")
             
-            print(f"\n Feature Array Shape: {feature_array.shape}")
-            print(f" Feature Processing Successful!")
+            print(f"\n✓ Feature Array Shape: {feature_array.shape}")
+            print(f"✓ Feature Processing Successful!")
             
             # Validate features
             is_valid = processor.validate_features(raw_features)
@@ -481,24 +485,24 @@ if __name__ == "__main__":
             
             # Show feature names
             feature_names = processor.get_feature_names()
-            print(f"\n Total Features: {len(feature_names)}")
+            print(f"\n✓ Total Features: {len(feature_names)}")
             print(f"   Numerical: {len(processor.numerical_features)}")
             print(f"   Encoded: {len(feature_names) - len(processor.numerical_features)}")
             
             # Show first few actual feature values
-            print(f"\n First 10 feature values:")
+            print(f"\n✓ First 10 feature values:")
             for i in range(min(10, len(feature_names))):
                 print(f"  {feature_names[i]}: {feature_array[0][i]:.4f}")
         
         db.close()
         print("\n" + "=" * 70)
-        print(" FEATURE PROCESSOR TEST COMPLETE")
+        print("✓ FEATURE PROCESSOR TEST COMPLETE")
         print("=" * 70)
         
     except ImportError:
-        print("\n  Database module not available")
+        print("\n⚠ Database module not available")
         print("Run this test after setting up database.py")
     except Exception as e:
-        print(f"\n Error during testing: {e}")
+        print(f"\n✗ Error during testing: {e}")
         import traceback
         traceback.print_exc()
