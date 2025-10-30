@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CropWatch | Analysis</title>
-    <link rel="stylesheet" href="../css/analysis.css">
+    <link rel="stylesheet" href="../css/analysis.css"> 
 </head>
 <body>
     <header>
@@ -59,9 +59,16 @@
                             <label for="setup-impurities">Grain Impurities</label>
                             <input type="text" id="setup-impurities" placeholder="Type here">
                         </div>
-                        <div class="input-group button-group-end">
+                        
+                        <div class="input-group send-button-group">
+                            <label class="hidden-label" aria-hidden="true">&nbsp;</label> 
                             <button type="submit" class="send-btn">
                                 Send <span class="icon">➤</span>
+                            </button>
+                        </div>
+                        <div class="end-session-wrapper full-width">
+                            <button type="button" class="end-session-btn">
+                                End Session
                             </button>
                         </div>
                         </form>
@@ -97,14 +104,17 @@
                         <label for="check-damage">Initial total damage (%)</label>
                         <input type="text" id="check-damage" placeholder="Type here">
                     </div>
-                    <div class="input-group full-width">
+                    <div class="input-group half-width">
                         <label for="check-impurities">Grain Impurities</label>
                         <input type="text" id="check-impurities" placeholder="Type here">
                     </div>
+                    <div class="input-group half-width submit-group-manual">
+                        <label class="hidden-label" aria-hidden="true">&nbsp;</label>
+                        <button type="submit" class="send-btn manual-btn">
+                            Send <span class="icon">➤</span>
+                        </button>
+                    </div>
                     
-                    <button type="submit" class="send-btn manual-btn">
-                        Send <span class="icon">➤</span>
-                    </button>
                 </form>
 
                 <div class="result-box">

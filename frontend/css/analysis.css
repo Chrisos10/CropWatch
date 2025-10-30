@@ -125,23 +125,21 @@ nav a:hover:not(.active) {
     stroke-width: 2;
 }
 
-/* ==== MAIN CONTENT (FIXED FOR ZOOM STABILITY) ====*/
+/* ==== MAIN CONTENT ====*/
 main {
     padding: 20px 60px;
-    /* FIX: Changed height to min-height to allow content to expand when zoomed */
     min-height: calc(100vh - 70px); 
-    height: auto; /* Remove fixed height constraint */
+    height: auto;
     display: flex;
     align-items: center;
 }
 
-/* ===== ANALYSIS PAGE (MINOR ADJUSTMENT) ===== */
+/* ===== ANALYSIS PAGE ===== */
 
 .analysis-container {
     display: flex;
     gap: 30px;
     width: 100%;
-    /* MINOR TWEAK: Use min-height to ensure container expands with content */
     min-height: 100%;
     height: auto;
     align-items: stretch;
@@ -199,10 +197,7 @@ main {
     gap: 15px;
     flex: 1;
     flex-shrink: 0;
-}
-
-.setup-form {
-    align-content: flex-start;
+    align-content: flex-start; 
 }
 
 .check-form {
@@ -213,17 +208,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    width: calc(50% - 8px);
+    width: calc(50% - 7.5px); 
 }
 
 .input-group.full-width {
     width: 100%;
-}
-
-.input-group label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #1a4f02;
 }
 
 .input-group input[type="text"] {
@@ -240,21 +229,26 @@ main {
     border-color: #469a47;
 }
 
-/* ===== BUTTON STYLING ===== */
 
-.setup-form .button-group-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-top: auto;
+.hidden-label {
+    visibility: hidden;
+    height: 1.3rem;
+    margin-bottom: 4px;
 }
 
+/* ===== BUTTON STYLING  ===== */
+
+.send-button-group, .submit-group-manual {
+    justify-content: flex-end;
+    margin-top: 0; 
+    height: auto; 
+}
 
 .send-btn {
     background-color: #1a4f02;
     color: #ffffff;
     border: none;
-    padding: 12px 24px;
+    padding: 10px 24px;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
@@ -264,8 +258,9 @@ main {
     justify-content: center;
     gap: 8px;
     font-size: 0.9rem;
-    width: 120px;
-    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    margin-top: 0; 
 }
 
 .send-btn:hover {
@@ -278,14 +273,50 @@ main {
 }
 
 
-.check-form .manual-btn {
+.end-session-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     margin-top: auto;
-    width: 120px;
-    align-self: flex-start;
+    padding-top: 30px;
+}
+
+.end-session-btn {
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    padding: 12px 50px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    width: 250px; 
+}
+
+.end-session-btn:hover {
+    background-color: #c0392b;
+}
+
+.end-session-btn .icon {
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+
+
+.check-form .manual-btn {
+    margin-top: 0;
+    width: 100%;
+    align-self: flex-start; 
 }
 
 .check-form .input-group {
-    width: calc(50% - 8px);
+    width: calc(50% - 7.5px);
 }
 
 
@@ -322,7 +353,7 @@ main {
 }
 
 
-/* ===== RESPONSIVE DESIGN FOR ANALYSIS ===== */
+/* ===== RESPONSIVE DESIGN ===== */
 
 @media (max-width: 1024px) {
     .analysis-container {
@@ -332,9 +363,8 @@ main {
     }
     
     main {
-        /* On tablet/mobile, we want the main content to grow and scroll the whole page */
         height: auto;
-        min-height: auto; /* Resetting min-height for mobile responsiveness */
+        min-height: auto;
         padding: 20px 40px;
     }
     
@@ -351,6 +381,16 @@ main {
         overflow-y: hidden;
         min-height: 80px;
         height: auto;
+    }
+    
+  
+    .end-session-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .send-btn {
+        width: 100%; 
     }
 }
 
@@ -384,7 +424,12 @@ main {
         padding: 15px 30px;
     }
     
+
     .input-group {
+        width: 100%;
+    }
+    
+    .send-btn {
         width: 100%;
     }
     
@@ -393,8 +438,12 @@ main {
         width: 100%;
     }
     
-    .setup-form .send-btn {
-        width: 100%;
+    .end-session-wrapper {
+        margin-top: 0; 
+    }
+    
+    .end-session-btn {
+        max-width: 100%;
     }
 }
 
