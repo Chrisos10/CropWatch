@@ -25,7 +25,7 @@ class ModelPredictor:
     _model = None
     _model_loaded = False
     
-    def __new__(cls, model_path: str = "./models/best_xgb_model.pkl"):
+    def __new__(cls, model_path: str = None):
         if cls._instance is None:
             cls._instance = super(ModelPredictor, cls).__new__(cls)
             cls._instance._initialize_model(model_path)
@@ -33,6 +33,13 @@ class ModelPredictor:
     
     def _initialize_model(self, model_path: str):
         """Initialize the model"""
+        # If no path provided, construct path relative to this file's location
+        if model_path is None:
+            # Get the directory containing this file (model.py)
+            current_file_dir = Path(__file__).parent
+            # models folder is in the SAME directory as model.py (both at root)
+            model_path = current_file_dir / "models" / "best_xgb_model.pkl"
+        
         self.model_path = Path(model_path)
         self._load_model()
     
@@ -46,7 +53,7 @@ class ModelPredictor:
                 self._model = pickle.load(f)
             
             self._model_loaded = True
-            logger.info(f" XGBoost model loaded successfully from {self.model_path}")
+            logger.info(f"✓ XGBoost model loaded successfully from {self.model_path}")
             
             # Log model details
             if hasattr(self._model, 'n_estimators'):
@@ -55,7 +62,7 @@ class ModelPredictor:
                 logger.info(f"   Expected features: {len(self._model.feature_names_in_)}")
                 
         except Exception as e:
-            logger.error(f" Error loading model: {e}")
+            logger.error(f"✗ Error loading model: {e}")
             raise
     
     def predict(self, features: np.ndarray) -> float:
@@ -82,12 +89,12 @@ class ModelPredictor:
             # Clip prediction to valid range [0, 100]%
             prediction = np.clip(prediction, 0.0, 100.0)
             
-            logger.info(f" Model prediction: {prediction:.2f}% damage")
+            logger.info(f"✓ Model prediction: {prediction:.2f}% damage")
             
             return float(prediction)
             
         except Exception as e:
-            logger.error(f" Error during prediction: {e}")
+            logger.error(f"✗ Error during prediction: {e}")
             raise
     
     def validate_feature_shape(self, features: np.ndarray) -> bool:
@@ -123,12 +130,12 @@ class ModelPredictor:
 # Model instance
 _predictor_instance = None
 
-def get_predictor(model_path: str = "./models/best_xgb_model.pkl") -> ModelPredictor:
+def get_predictor(model_path: str = None) -> ModelPredictor:
     """
     Get the global model predictor instance (singleton)
     
     Args:
-        model_path: Path to the trained model file
+        model_path: Path to the trained model file (optional)
         
     Returns:
         ModelPredictor instance
@@ -139,7 +146,7 @@ def get_predictor(model_path: str = "./models/best_xgb_model.pkl") -> ModelPredi
     return _predictor_instance
 
 def predict_damage(features: np.ndarray, 
-                  model_path: str = "./models/best_xgb_model.pkl") -> float:
+                  model_path: str = None) -> float:
     """
     Helper function for making predictions
     
