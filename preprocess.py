@@ -46,16 +46,19 @@ class FeatureProcessor:
         Args:
             encoder_path: Path to saved OneHotEncoder (optional)
         """
-
+        # If no path provided, construct path relative to this file's location
         if encoder_path is None:
+            # Get the directory containing this file (preprocess.py)
             current_file_dir = Path(__file__).parent
-            encoder_path = current_file_dir.parent / "models" / "encoder.pkl"
+            # models folder is in the SAME directory as preprocess.py (both at root)
+            encoder_path = current_file_dir / "models" / "encoder.pkl"
         
         self.encoder_path = Path(encoder_path)
         self.encoder = self._load_encoder()
         self.weather_retriever = WeatherDataRetriever()
         
         # Define expected feature order
+        # These are the numerical features before encoding
         self.numerical_features = [
             'tmax_c',
             'hrmin_pct',
@@ -67,7 +70,7 @@ class FeatureProcessor:
         # Categorical features to encode
         self.categorical_features = ['storage_technology', 'variety']
         
-        # Define exact categories expected by the model
+        # Define exact categories expected by the model (from your feature list)
         self.expected_varieties = ['Hybrid', 'Native']
         self.expected_storage_techs = [
             'grainpro hermetic supergrainbag farm',
