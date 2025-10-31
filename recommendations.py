@@ -454,12 +454,3 @@ if __name__ == "__main__":
         location='Nyarugenge'
     )
     print(result5['notification_message'])
-    
-    print("\n" + "=" * 80)
-    print("KEY IMPROVEMENTS:")
-    print("✓ PREDICTION-FIRST: Trusts model's 0% prediction over feature thresholds")
-    print("✓ CONTEXT-AWARE: Different recommendations for same feature at different risk levels")
-    print("✓ PREVENTIVE vs ACTION: Low risk = preventive, Medium/High = action required")
-    print("✓ FEATURE IMPORTANCE: Prioritizes issues by model's learned importance")
-    print("✓ DATABASE COMPATIBLE: Maps 'perfect' to 'low' for enum constraint")
-    print("=" * 80)
