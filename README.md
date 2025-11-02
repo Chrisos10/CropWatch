@@ -35,27 +35,31 @@ The frontend uses HTML5, CSS3, and JavaScript with LocalStorage for tokens and c
 
 CropWatch/
 ├── api/
-│   ├── main.py                              # FastAPI application & endpoints
-├── data/                                    # ML model training datasets
-│   │── Capstone_dataset_encoded.csv         # Dataset with handled categorical features
-│   └── Capstone_dataset.csv                 # Cleaned dataset
-├── frontend/                                Dashboard
-│   ├── index.html              
+│   ├── main.py                     # FastAPI application & API endpoints
+│
+├── data/                           # Datasets used for model training
+│   ├── Capstone_dataset.csv         # Cleaned dataset
+│   └── Capstone_dataset_encoded.csv # Dataset with encoded categorical features
+│
+├── frontend/                       # Dashboard and static web interface
+│   ├── index.html
 │   ├── login.html
 │   ├── register.html
 │   ├── profile.html
 │   ├── notifications.html
 │   ├── analysis.html
-│   ├── css/
-│       ├── index.css              # API wrapper & HTTP client
-│       ├── register.css
-│       ├── login.css
-│       ├── profile.css
-│       ├── notifications.css
-│       └── analysis.css
-│   └── js/
-│       ├── api.js               # API wrapper & HTTP client
-│       ├── common.js            # Navigation & utilities
+│   │
+│   ├── css/                        # Styling files
+│   │   ├── index.css
+│   │   ├── register.css
+│   │   ├── login.css
+│   │   ├── profile.css
+│   │   ├── notifications.css
+│   │   └── analysis.css
+│   │
+│   └── js/                         # Client-side logic
+│       ├── api.js                  # API wrapper & HTTP client
+│       ├── common.js               # Navigation & shared utilities
 │       ├── register.js
 │       ├── login.js
 │       ├── profile.js
@@ -63,20 +67,25 @@ CropWatch/
 │       └── analysis.js
 │
 ├── model_training/
-│   └── Capstone_Model_Training.ipynb       # Model training notebook
-├── models/
+│   └── Capstone_Model_Training.ipynb  # Model training and evaluation notebook
+│
+├── models/                         # Serialized models and encoders
 │   ├── best_xgb_model.pkl
 │   └── encoder.pkl
-├── weather_info/                            # Weather API integration files
-│   │── locations.py
+│
+├── weather_info/                   # Weather API integration modules
+│   ├── locations.py
 │   └── weather.py
-│── database.py                              # Database schema & ORM models
-│── automation.py                            # Scheduler for automated predictions
-│── preprocess.py                            # Feature engineering & encoding
-│── model.py                                 # ML model loading & prediction
-│── recommendations.py                       # Risk assessment & recommendations
-│── requirements.txt
-└── README.md
+│
+├── database.py                     # Database schema and ORM models
+├── automation.py                   # Automated scheduling and prediction tasks
+├── preprocess.py                   # Feature engineering and preprocessing functions
+├── model.py                        # Model loading and prediction logic
+├── recommendations.py              # Risk assessment and recommendation engine
+│
+├── requirements.txt                # Project dependencies
+└── README.md                       # Project documentation
+
 
 ---
 ## Environment Setup & Installation
