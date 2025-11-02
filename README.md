@@ -1,7 +1,7 @@
 # CropWatch
 
 ## Overview
-**CropWatch** provides predictive analytics for crop storage management, specifically targeting maize storage in Rwanda. It combines machine learning predictions with real-time weather data to help farmers monitor storage conditions continuously, predict spoilage percentages before they occur, receive actionable recommendations to prevent crop loss, and track storage sessions over time.  
+**CropWatch** provides predictive analytics for crop storage management, specifically targeting maize storage in Rwanda. It combines machine learning predictions with real-time weather data to help farmers monitor storage conditions continuously, predict spoilage percentages before they occur, receive actionable recommendations to prevent crop loss, while Minimizing Pesticides Dependency.  
 
 ## Features
 The application offers:
