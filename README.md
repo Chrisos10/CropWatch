@@ -32,7 +32,7 @@ The backend is built with FastAPI (Python 3.11.9), PostgreSQL with SQLAlchemy OR
 
 The frontend uses HTML5, CSS3, and JavaScript with LocalStorage for tokens and cache, following an event-driven architecture. The infrastructure runs on Uvicorn server with python-dotenv for configuration management.
 
-
+```bash
 CropWatch/
 ├── api/
 │   ├── main.py                     # FastAPI application & API endpoints
@@ -86,7 +86,7 @@ CropWatch/
 ├── requirements.txt                # Project dependencies
 └── README.md                       # Project documentation
 
-
+```
 ---
 ## Environment Setup & Installation
 
