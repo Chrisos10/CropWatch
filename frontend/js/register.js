@@ -39,11 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Call register API
             const response = await CropWatchAPI.Auth.register(formData);
             
-            showMessage('Registration successful! Redirecting...', 'success');
+            // Logout immediately after registration
+            CropWatchAPI.Token.remove();
+            CropWatchAPI.User.remove();
             
-            // Redirect to home page after short delay
+            showMessage('Registration successful! Redirecting to login...', 'success');
+            
+            // Redirect to login page
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'login.html';
             }, 1500);
             
         } catch (error) {
