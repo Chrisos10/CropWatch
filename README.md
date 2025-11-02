@@ -1,16 +1,19 @@
 # CropWatch
 
-## Description
-**CropWatch** aims to serve as a predictive approach to reducing post-Harvest losses while minimizing pesticide dependency in Rwanda. It aims to train ML models under varying storage technologies and environmental conditions to predict spoilage risks and then suggest chemical-free interventions to mitigate the outbreak of the predicted risks.  
+## Overview
+**CropWatch** provides predictive analytics for crop storage management, specifically targeting maize storage in Rwanda. It combines machine learning predictions with real-time weather data to help farmers monitor storage conditions continuously, predict spoilage percentages before they occur, receive actionable recommendations to prevent crop loss, and track storage sessions over time.  
 
-Model training integrated different steps like **data cleaning, feature exploration, non-linear relationship analysis, and model training** to identify patterns in crop spoilage and learn how to predict spoilage risks.  
-
-This project leverages experimental data collected under **controlled and uncontrolled environments** and uses advanced models like **XGBoost, Gradient Boosting, and Random Forest** to identify the model that best captures the complex relationships among variables such as temperature, humidity, storage method, and duration.
-
----
+## Features
+The application offers:
+- Secure user authentication with JWT tokens
+- Automated daily ML-powered spoilage predictions 
+- Real-time weather data integration for each district
+- Context-aware smart notifications with risk assessment 
+- On-demand predictions with custom inputs
+- Profiles management with updates of users' information and preferences
 
 ## Important Links
-Link to Figma Design Prototype: [Figma Prototype](https://www.figma.com/proto/HeYYfDZr1FuFhiuX3QKn9d/Untitled?node-id=55-110&t=To9ZBosESzdP5faF-1)
+Link to CropWatch: [CropWatch Website](https://cropwatch-management-system.onrender.com/login.html)
 
 
 Link to Demo_video: 
@@ -18,76 +21,110 @@ Link to Demo_video:
 
 ### [Watch Solution Demonstration Demo](https://youtu.be/MMUu5lhs7qc)
 
+Link to CropWatch FastAPI : [CropWatch FastAPI](https://cropwatch-1.onrender.com/docs) 
 
-Link to Github Repo: [Repository](https://github.com/Chrisos10/CropWatch.git)
-
-Link to Raw Datasets: [Raw Datasets](https://data.mendeley.com/datasets/fmtgzw5mmp/1) 
+Link to Raw Datasets used in model training: [Raw Datasets](https://data.mendeley.com/datasets/fmtgzw5mmp/1) 
 
 ---
-## System feature
 
-The porposed solution/system is a website with a user friendly interface that will enable the farmer to engage with the system unchallenged.
-Core functionalities are:
-- Automatic daily crop damage percentage predictions and associated chemical-free interventions to avoid the predicted damage
-- Single-time use or prediction for flexibility and instantaneous use
-- Data upload and storage to the system database to avoid daily filling of the same information
-- History dashboard to track trends and effectiveness of the suggested interventions.
+## Tech Stack
+The backend is built with FastAPI (Python 3.11.9), PostgreSQL with SQLAlchemy ORM, JWT authentication, APScheduler for automation, and scikit-learn for machine learning. Security is handled through werkzeug password hashing.
 
-![Prediction functionalities](./Assets/predict.png)
+The frontend uses HTML5, CSS3, and JavaScript with LocalStorage for tokens and cache, following an event-driven architecture. The infrastructure runs on Uvicorn server with python-dotenv for configuration management.
 
-![History dashboard](./Assets/history.png)
+
+CropWatch/
+├── api/
+│   ├── main.py                              # FastAPI application & endpoints
+├── data/                                    # ML model training datasets
+│   │── Capstone_dataset_encoded.csv         # Dataset with handled categorical features
+│   └── Capstone_dataset.csv                 # Cleaned dataset
+├── frontend/                                Dashboard
+│   ├── index.html              
+│   ├── login.html
+│   ├── register.html
+│   ├── profile.html
+│   ├── notifications.html
+│   ├── analysis.html
+│   ├── css/
+│       ├── index.css              # API wrapper & HTTP client
+│       ├── register.css
+│       ├── login.css
+│       ├── profile.css
+│       ├── notifications.css
+│       └── analysis.css
+│   └── js/
+│       ├── api.js               # API wrapper & HTTP client
+│       ├── common.js            # Navigation & utilities
+│       ├── register.js
+│       ├── login.js
+│       ├── profile.js
+│       ├── notifications.js
+│       └── analysis.js
+│
+├── model_training/
+│   └── Capstone_Model_Training.ipynb       # Model training notebook
+├── models/
+│   ├── best_xgb_model.pkl
+│   └── encoder.pkl
+├── weather_info/                            # Weather API integration files
+│   │── locations.py
+│   └── weather.py
+│── database.py                              # Database schema & ORM models
+│── automation.py                            # Scheduler for automated predictions
+│── preprocess.py                            # Feature engineering & encoding
+│── model.py                                 # ML model loading & prediction
+│── recommendations.py                       # Risk assessment & recommendations
+│── requirements.txt
+└── README.md
+
+---
 ## Environment Setup & Installation
 
-The project's development environment setup will require the following;
+Follow these steps to run the application:
+1. Clone the Repository
 
-**Backend**:
-
-- Python 3.10+ with FastAPI installed.
-
-- xgboost, pandas, numpy, scikit-learn installed.
-
-- Virtual environment
-
-Follow these steps to run it
-
-#### 1. Clone the Repository
 ```bash
-git clone https://github.com/Chrisos10/CropWatch.git
+clone https://github.com/Chrisos10/CropWatch.git
+```
+```bash
 cd CropWatch
 ```
-#### 2. Creating a Virtual Environment
 
+2. Create a Virtual Environment
 ```bash
 python -m venv venv
 ```
-Activate it using
+Activate it using:
 ```bash
-# On windows
-venv/Scripts/activate
+# On Windows
+venv\Scripts\activate
 ```
 ```bash
 # On Mac/Linux
 source venv/bin/activate
 ```
-
-#### 3. Installing The Requirements
+3. Install the Requirements
 ```bash
 pip install -r requirements.txt
 ```
-
 This will install all the necessary libraries that will be used in this project.
 
-#### 4. Testing The API:
+4. Configure Environment Variables
+Create a .env file in the project root and generate a secret key that will be used in your api using this link: https://generate-random.org/api-keys
 
-Command to start FastAPI:
+Then in your .env file, add
+
+SECRET_KEY=your-super-secret
+DATABASE_URL=postgresql://username:password@localhost:5432/crop_storage_db
+
+5. Initialize the Database
+Create your POSTGRESQL datavase and after replacing your DATABASE_URL in your .env file, run
+```bash
+python database.py
+```
+6. Start the FastAPI Server
 ```bash
 uvicorn main:app --reload
 ```
-
-For Running the notebook, 
-Download the notebook and the datasets and upload them to google drive. Then mount your google drive by running
-
-```bash
-from google.colab import drive
-drive.mount('/content/drive')
-```
+Access the application
