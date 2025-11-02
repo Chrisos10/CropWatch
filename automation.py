@@ -9,7 +9,7 @@ from typing import List
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 
-# Import your modules
+# Import modules
 from database import (
     get_db,
     get_active_sessions,
@@ -52,7 +52,7 @@ class IntegratedPredictionScheduler:
             logger.warning(" Scheduler already running")
             return
         
-        # Initialize ML components (lazy loading)
+        # Initialize ML components
         if not self.processor:
             self.processor = FeatureProcessor()
             logger.info(" Feature processor loaded")
@@ -209,7 +209,7 @@ class IntegratedPredictionScheduler:
     
     def trigger_manual_run(self):
         """
-        Manually trigger predictions (for testing or admin endpoint)
+        Manually trigger predictions (for testing or automated endpoint)
         Returns summary of the run
         """
         logger.info(" Manual prediction run triggered")

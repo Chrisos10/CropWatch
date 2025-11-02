@@ -373,6 +373,17 @@ main {
         min-height: auto;
     }
 
+    .check-form .input-group label {
+        min-height: 2.5em; 
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.25; 
+    }
+
+    .check-form .submit-group-manual label.hidden-label {
+        height: 2.5em; 
+    }
+
     .result-box {
         flex: 0 0 auto;
     }
@@ -383,7 +394,7 @@ main {
         height: auto;
     }
     
-  
+ 
     .end-session-btn {
         width: 100%;
         max-width: 250px;

@@ -2,5 +2,5 @@ venv
 .env
 dbtest.py
 testautomation.py
-scheduler.py
-requirements.txt
+__pycache__/
+*.pyc

@@ -179,7 +179,7 @@ class Notification(Base):
     # Delivery tracking
     sent_at = Column(DateTime, default=datetime.utcnow)
     delivery_status = Column(Enum('pending', 'sent', 'failed', name='delivery_status'), 
-                            nullable=False, default='sent')  # Default to 'sent' for web notifications
+                            nullable=False, default='sent')
     
     # Relationships
     user = relationship('User', back_populates='notifications')
