@@ -19,7 +19,7 @@ Link to CropWatch: [CropWatch Website](https://cropwatch-management-system.onren
 Link to Demo_video: 
 [![Watch the video](https://img.youtube.com/vi/MMUu5lhs7qc/maxresdefault.jpg)](https://youtu.be/MMUu5lhs7qc)
 
-### [Watch Solution Demonstration Demo](https://youtu.be/MMUu5lhs7qc)
+### [Watch CropWatch Demo](https://youtu.be/MMUu5lhs7qc)
 
 Link to CropWatch FastAPI : [CropWatch FastAPI](https://cropwatch-1.onrender.com/docs) 
 
