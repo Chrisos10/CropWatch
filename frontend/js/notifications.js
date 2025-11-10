@@ -248,19 +248,20 @@ function clearNotificationBadge() {
     }
 }
 
-// Format date
+// Format date to always show Kigali time
 function formatDate(date) {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
+    const kigaliDate = new Date(date.toLocaleString('en-US', { timeZone: 'Africa/Kigali' }));
+    const day = String(kigaliDate.getDate()).padStart(2, '0');
+    const month = String(kigaliDate.getMonth() + 1).padStart(2, '0');
+    const year = kigaliDate.getFullYear();
     return `${day}-${month}-${year}`;
 }
 
-// Format time
 function formatTime(date) {
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    const seconds = String(date.getSeconds()).padStart(2, '0');
+    const kigaliTime = new Date(date.toLocaleString('en-US', { timeZone: 'Africa/Kigali' }));
+    const hours = String(kigaliTime.getHours()).padStart(2, '0');
+    const minutes = String(kigaliTime.getMinutes()).padStart(2, '0');
+    const seconds = String(kigaliTime.getSeconds()).padStart(2, '0');
     return `${hours}:${minutes}:${seconds}`;
 }
 
