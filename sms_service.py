@@ -24,7 +24,7 @@ class SMSService:
     _instance = None
     _client = None
     _from_number = None
-    _enabled = False
+    _enabled = True
     
     def __new__(cls):
         """Creating only one instance created"""
@@ -76,13 +76,13 @@ class SMSService:
         Format Rwanda phone number to E.164 format required by Twilio
         
         Handles multiple input formats:
-        - +250788123456 (already formatted)
-        - 250788123456 (missing +)
-        - 0788123456 (national format)
-        - 788123456 (just the number)
+        - +250788123456
+        - 250788123456
+        - 0788123456
+        - 788123456
         
         Returns:
-            Formatted phone number in format (+250XXXXXXXXX)
+            Formatted phone number in format
         """
         # Remove spaces, dashes, and parentheses
         phone = phone.replace(' ', '').replace('-', '').replace('(', '').replace(')', '')
