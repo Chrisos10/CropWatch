@@ -43,24 +43,41 @@
                     <form class="setup-form">
                         <div class="input-group">
                             <label for="setup-technology">Storage Technology</label>
-                            <input type="text" id="setup-technology" placeholder="Type here">
+                            <select id="setup-technology" required>
+                                <option value="">Select storage technology</option>
+                                <option value="polypropylene bag">Polypropylene Bag</option>
+                                <option value="hermetic metal silo">Hermetic Metal Silo</option>
+                                <option value="grainpro hermetic supergrainbag farm">GrainPro Hermetic SuperGrainBag Farm</option>
+                                <option value="grainpro hermetic supergrainbag premium rz with zip">GrainPro Hermetic SuperGrainBag Premium RZ with Zip</option>
+                                <option value="plastic barrel">Plastic Barrel</option>
+                                <option value="plastic bottle">Plastic Bottle</option>
+                                <option value="silage plastic bag">Silage Plastic Bag</option>
+                                <option value="polypropylene bag with aluminum phosphide">Polypropylene Bag with Aluminum Phosphide</option>
+                                <option value="polypropylene bag with deodorized malathion">Polypropylene Bag with Deodorized Malathion</option>
+                                <option value="polypropylene bag with micronized lime">Polypropylene Bag with Micronized Lime</option>
+                                <option value="polypropylene bag with standard lime">Polypropylene Bag with Standard Lime</option>
+                            </select>
                         </div>
                         <div class="input-group">
                             <label for="setup-variety">Variety</label>
-                            <input type="text" id="setup-variety" placeholder="Type here">
+                            <select id="setup-variety" required>
+                                <option value="">Select crop variety</option>
+                                <option value="native">Native</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
                         </div>
                         <div class="input-group">
                             <label for="setup-duration">Storage time (days)</label>
-                            <input type="text" id="setup-duration" placeholder="Type here">
+                            <input type="number" id="setup-duration" placeholder="e.g., 30" min="0" required>
                         </div>
                         <div class="input-group">
                             <label for="setup-damage">Initial total damage (%)</label>
-                            <input type="text" id="setup-damage" placeholder="Type here">
+                            <input type="number" id="setup-damage" placeholder="e.g., 2.5" min="0" max="100" step="0.1" required>
                         </div>
                         
                         <div class="input-group">
-                            <label for="setup-impurities">Grain Impurities</label>
-                            <input type="text" id="setup-impurities" placeholder="Type here">
+                            <label for="setup-impurities">Grain Impurities (%)</label>
+                            <input type="number" id="setup-impurities" placeholder="e.g., 1.5" min="0" max="100" step="0.1" required>
                         </div>
                         
                         <div class="input-group send-button-group">
@@ -74,7 +91,7 @@
                                 End Session
                             </button>
                         </div>
-                        </form>
+                    </form>
                 </div>
             </section>
 
@@ -85,31 +102,48 @@
                 <form class="check-form">
                     <div class="input-group half-width">
                         <label for="check-technology">Storage Technology</label>
-                        <input type="text" id="check-technology" placeholder="Type here">
+                        <select id="check-technology" required>
+                            <option value="">Select storage technology</option>
+                            <option value="polypropylene bag">Polypropylene Bag</option>
+                            <option value="hermetic metal silo">Hermetic Metal Silo</option>
+                            <option value="grainpro hermetic supergrainbag farm">GrainPro Hermetic SuperGrainBag Farm</option>
+                            <option value="grainpro hermetic supergrainbag premium rz with zip">GrainPro Hermetic SuperGrainBag Premium RZ with Zip</option>
+                            <option value="plastic barrel">Plastic Barrel</option>
+                            <option value="plastic bottle">Plastic Bottle</option>
+                            <option value="silage plastic bag">Silage Plastic Bag</option>
+                            <option value="polypropylene bag with aluminum phosphide">Polypropylene Bag with Aluminum Phosphide</option>
+                            <option value="polypropylene bag with deodorized malathion">Polypropylene Bag with Deodorized Malathion</option>
+                            <option value="polypropylene bag with micronized lime">Polypropylene Bag with Micronized Lime</option>
+                            <option value="polypropylene bag with standard lime">Polypropylene Bag with Standard Lime</option>
+                        </select>
                     </div>
                     <div class="input-group half-width">
-                        <label for="check-temperature">Temperature</label>
-                        <input type="text" id="check-temperature" placeholder="Type here">
+                        <label for="check-temperature">Temperature (°C)</label>
+                        <input type="number" id="check-temperature" placeholder="e.g., 25.5" min="10" max="40" step="0.1" required>
                     </div>
                     <div class="input-group half-width">
-                        <label for="check-humidity">Humidity</label>
-                        <input type="text" id="check-humidity" placeholder="Type here">
+                        <label for="check-humidity">Humidity (%)</label>
+                        <input type="number" id="check-humidity" placeholder="e.g., 65.0" min="0" max="100" step="0.1" required>
                     </div>
                     <div class="input-group half-width">
                         <label for="check-variety">Variety</label>
-                        <input type="text" id="check-variety" placeholder="Type here">
+                        <select id="check-variety" required>
+                            <option value="">Select crop variety</option>
+                            <option value="native">Native</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
                     </div>
                     <div class="input-group half-width">
                         <label for="check-duration">Storage time (days)</label>
-                        <input type="text" id="check-duration" placeholder="Type here">
+                        <input type="number" id="check-duration" placeholder="e.g., 30" min="0" required>
                     </div>
                     <div class="input-group half-width">
                         <label for="check-damage">Initial total damage (%)</label>
-                        <input type="text" id="check-damage" placeholder="Type here">
+                        <input type="number" id="check-damage" placeholder="e.g., 2.5" min="0" max="100" step="0.1" required>
                     </div>
                     <div class="input-group half-width">
-                        <label for="check-impurities">Grain Impurities</label>
-                        <input type="text" id="check-impurities" placeholder="Type here">
+                        <label for="check-impurities">Grain Impurities (%)</label>
+                        <input type="number" id="check-impurities" placeholder="e.g., 1.5" min="0" max="100" step="0.1" required>
                     </div>
                     <div class="input-group half-width submit-group-manual">
                         <label class="hidden-label" aria-hidden="true">&nbsp;</label>

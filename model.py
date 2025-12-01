@@ -53,7 +53,7 @@ class ModelPredictor:
                 self._model = pickle.load(f)
             
             self._model_loaded = True
-            logger.info(f"✓ XGBoost model loaded successfully from {self.model_path}")
+            logger.info(f" XGBoost model loaded successfully from {self.model_path}")
             
             # Log model details
             if hasattr(self._model, 'n_estimators'):

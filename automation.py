@@ -19,13 +19,13 @@ from database import (
 from preprocess import FeatureProcessor
 from model import get_predictor
 from recommendations import get_recommendation
-from sms_service import get_sms_service
+from sms_service_twilio_backup import get_sms_service
 
 # Configure logging
 logger = logging.getLogger(__name__)
 
 # SMS CONFIGURATION
-SEND_SMS_NOTIFICATIONS = False  # Set to True to enable SMS, False to disable
+SEND_SMS_NOTIFICATIONS = True
 
 
 class IntegratedPredictionScheduler:

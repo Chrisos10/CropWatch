@@ -215,7 +215,15 @@ main {
     width: 100%;
 }
 
-.input-group input[type="text"] {
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1a4f02;
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"],
+.input-group select {
     padding: 10px 12px;
     border: 1px solid #8cc38d;
     border-radius: 5px;
@@ -224,7 +232,21 @@ main {
     background-color: #ffffff;
 }
 
-.input-group input[type="text"]:focus {
+.input-group select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a4f02' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 35px;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="number"]:focus,
+.input-group select:focus {
     outline: 2px solid #469a47;
     border-color: #469a47;
 }

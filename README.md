@@ -81,6 +81,8 @@ CropWatch/
 ├── preprocess.py                   # Feature engineering and preprocessing functions
 ├── model.py                        # Model loading and prediction logic
 ├── recommendations.py              # Risk assessment and recommendation engine
+├── sms_service_AT.py               # Africa's Talking configuration file
+├── sms_service_twilio_backup.py    # Twilio setup for real-time testing purposes
 │
 ├── requirements.txt                # Project dependencies
 └── README.md                       # Project documentation
@@ -124,6 +126,7 @@ Create a .env file in the project root and generate a secret key that will be us
 Then in your .env file, add
 
 SECRET_KEY=your-super-secret
+
 DATABASE_URL=postgresql://username:password@localhost:5432/crop_storage_db
 
 5. Initialize the Database
@@ -131,8 +134,8 @@ Create your POSTGRESQL datavase and after replacing your DATABASE_URL in your .e
 ```bash
 python database.py
 ```
-6. Start the FastAPI Server
+6. Start the FastAPI Server by running
 ```bash
-uvicorn main:app --reload
+python api/main.py
 ```
-Access the application
+Then, Access the application endpoints at http://localhost:8000/docs and after, run the user interfaces by going live with index.html to acces the UI
